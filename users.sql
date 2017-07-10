@@ -33,7 +33,7 @@ CREATE TABLE `users` (
   `phone` varchar(13) NOT NULL,
   `ktp` varchar(16) NOT NULL,
   `date` varchar(20) NOT NULL,
-  `country` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
   `payment_type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,8 +41,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `name`, `email`, `phone`, `ktp`, `date`, `country`, `payment_type`) VALUES
-(105, 'nobee', 'nobee@nobee.com', '089089089089', '0000000000', '07/11/2017', 'Indonesia', 'cash');
+INSERT INTO `users` (`user_id`, `name`, `email`, `phone`, `ktp`, `date`, `address`, `payment_type`) VALUES
+(105, 'nobee', 'nobee@nobee.com', '089089089089', '0000000000', '07/11/2017', 'Jember', 'Jumbo');
 
 --
 -- Indexes for dumped tables

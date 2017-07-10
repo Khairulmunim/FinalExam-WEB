@@ -4,7 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gedung Bhayangkara</title>
+<link rel="shortcut icon" href="images/icon.ico"/>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
     function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -23,9 +26,9 @@ if (isset($_POST['submit'])) {
   $phone = $_POST['phone'];
   $ktp = $_POST['ktp'];
   $date = $_POST['date'];
-  $country = $_POST['country'];
+  $address = $_POST['address'];
   $intr = $_POST['usertype'];
-  $save = "INSERT INTO users (name,email,phone,ktp,date,country,payment_type)VALUES('".$name."','".$email."','".$phone."','".$ktp."','".$date."','".$country."','".$intr."')";
+  $save = "INSERT INTO users (name,email,phone,ktp,date,address,payment_type)VALUES('".$name."','".$email."','".$phone."','".$ktp."','".$date."','".$address."','".$intr."')";
   $result = mysqli_query($conn,$save);
   header("Location: thx.php");
   exit();
@@ -36,7 +39,6 @@ if (isset($_POST['submit'])) {
   <ul class="nav nav-pills">
     <li role="presentation" class="active"><a href="index.html">Home</a></li>
     <li role="presentation" class="active"><a href="contact.html">Contact</a></li>
-    <li role="presentation" class="active"><a href="about.html">About</a></li>
   </ul>
   <div class="jumbotron">
     <div id="contenair" align="center">
@@ -46,7 +48,7 @@ if (isset($_POST['submit'])) {
         <table>
         <form method="post" name="signupform" action="">
         <tr>
-          <td height="40">Name</td>
+          <td height="40">Nama</td>
           <td><input name="name" type="text" id="name" size="40" required="" /></td>
         </tr>
         <tr>
@@ -54,11 +56,11 @@ if (isset($_POST['submit'])) {
           <td><input name="email" type="text" id="email" size="40" required="" ></td>
         </tr>
         <tr>
-          <td height="40">Phone</td>
+          <td height="40">Nomor Telepon</td>
           <td><input name="phone" type="text" id="phone" size="40" class="phone" required="" /></td>
         </tr>
         <tr>
-          <td height="40">KTP Number</td>
+          <td height="40">Nomor KTP</td>
           <td><input name="ktp" type="text" id="ktp" size="40" required="" /></td>
         </tr>
         <tr>
@@ -71,18 +73,19 @@ if (isset($_POST['submit'])) {
           }
           );
         </script>
-          <td height="40">Date</td>
+          <td height="40">Tanggal</td>
           <td><input name="date" type="text" id="datepicker" size="40" required="" /></td>
         </tr>
         <tr>
-          <td height="40">Country/City/State</td>
-          <td><input name="country" type="text" id="country" size="40" required="" /></td>
+          <td height="40">Alamat</td>
+          <td><input name="address" type="text" id="address" size="40" required="" /></td>
         </tr>
         <tr>
-        <td>Payment Type : </td>
+        <td>Pilihan Paket : </td>
           <td>
-            <input type="radio" name="usertype" id="usertype1" value="cash" />Cash
-            <input type="radio" name="usertype" id="usertype2" value="transfer" required="" />Bank Transfer
+            <input type="radio" name="usertype" id="usertype1" value="biasa" />Biasa
+			<input type="radio" name="usertype" id="usertype1" value="jumbo" />Jumbo
+            <input type="radio" name="usertype" id="usertype2" value="super" required="" />Super Jumbo
           </td>
         </tr>
         <tr>
